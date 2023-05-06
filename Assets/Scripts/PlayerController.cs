@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
      //Setting the rigidbody of the character to rb2d   
-     rb2d = GetComponent<Rigidbody2D>(),   
+     rb2d = GetComponent<Rigidbody2D>();   
     }
 
     // Update is called once per frame
@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
         // if the Left Arrow us pressed torque will be applied to the character
         if(Input.GetKey(KeyCode.LeftArrow)){
             rb2d.AddTorque(tAmount);
+        }
+        if(Input.GetKey(KeyCode.RightArrow)) {
+            rb2d.AddTorque(-tAmount);
         }
     }
 }
